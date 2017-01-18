@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  color: MyString
+  year: MyString
+  manufacture: MyString
+
+two:
+  color: MyString
+  year: MyString
+  manufacture: MyString
