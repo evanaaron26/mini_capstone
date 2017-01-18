@@ -1,1 +1,11 @@
 <h1> This is a store </h1>
+
+<% @cars.each do |car| %>
+	<%= car.name %> 
+	<%= car.color %> 
+	<%= car.year %> 
+	<%= car.price %> 
+	<%= car.image %>
+	<%= car.name %>  
+
+<% end %> 
