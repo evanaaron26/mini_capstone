@@ -4,8 +4,14 @@ one:
   color: MyString
   year: MyString
   manufacture: MyString
+  price: MyString
+  image: MyString
+  name: MyString
 
 two:
   color: MyString
   year: MyString
   manufacture: MyString
+  price: MyString
+  image: MyString
+  name: MyString
