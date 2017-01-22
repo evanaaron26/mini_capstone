@@ -1,0 +1,22 @@
+<h2>Manufacture: <%= @car.manufacture %></h2>
+
+<h2>Color: <%= @car.color %></h2>
+
+<h2>Year: <%= @car.year %></h2>
+
+<h2>Price: <%= @car.price %></h2>
+
+<h2>Image: <%= @car.image %></h2>
+
+<h2>Name: <%= @car.name %></h2>
+
+<a href="/cars">Home</a> <br>
+
+<a class="btn btn-info" href="/cars/<%= 
+@car.id %>/edit"> Edit Car</a> <br>
+
+<%= form_tag "/cars/#{@car.id}", method: :delete do %> 
+<input class="btn btn-danger"
+type="submit" value="remove car">
+<% end %>
+

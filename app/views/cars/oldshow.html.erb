@@ -1,0 +1,23 @@
+<h1> This is a store </h1>
+
+<% @cars.each do |car| %>
+	<%= car.color %> <br> 
+	<%= car.year %> <br>  
+	<%= car.manufacture %> <br> 
+	<%= car.price %> <br> 
+	<%= car.image %> <br>  
+    <%= car.name %> <br> 
+
+<a href="/cars">Home</a> <br>
+
+<a class="btn btn-info" href="/recipes/<%= 
+car.id %>/edit"> Edit Car</a> <br>
+
+<%= form_tag "/cars/#{@car.id}", method: :delete do %> 
+<input class="btn btn-danger"
+type="submit" value="remove car">
+<% end %>
+
+<% end %>
+
+

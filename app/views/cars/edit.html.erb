@@ -1,0 +1,22 @@
+<h1>Update Car</h1>
+
+<%= form_tag "/cars/#{@car.id}", method: :patch do %>
+    <div>
+        Color: <input type="text" name="color" value="<%= @car.color %>"> 
+        Year: <input type="text" name="year" value="<%= @car.year %>"> 
+        Price: <input type="text" name="price" value="<%= @car.price %>"> 
+        Image: <input type="text" name="image" value="<%= @car.image %>"> 
+        Name: <input type="text" name="name" value="<%= @car.name %>"> 
+        Manufacture: <input type="text" name="manufacture" value="<%= @car.manufacture %>">
+
+        <input type="submit" value="Update Car">
+
+<% end %>  
+    
+
+
+
+
+
+
+ 
