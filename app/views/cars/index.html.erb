@@ -1,18 +1,13 @@
-<h1> Car-App!</h1>
+<h1>Cars-App</h1>
 
-<% @cars.each do |car|  %>
-    <h2>Year: <a href="/cars/<%= car.id %>"><%= car.year %></a></h2>
-    <h2>Manufacture: <%= car.manufacture %></h2>
-    <h2>Price: <%= car.price %></h2>
-    <h2>Image: <img src="<%= car.image %>"></h2>
-    <h2>Color: <%= car.color %></h2>
-    <h2>Name: <%= car.name %></h2>
+<% @cars.each do |car| %>
+  <h2>Years: <a href="/cars/<%= car.id %>"><%= car.year %></a></h2>
+  <h2>Manufacture: <a href="/cars/<%= car.manufacture %>"><%= car.manufacture %></a></h2>
+  <h2>Price: <a href="/cars/<%= car.price %>"><%= car.price %></a></h2>
+  <h2>Image: <a href="/cars/<%= car.image %>"><%= car.image %></a></h2>
+  <h2>Color: <a href="/cars/<%= car.color %>"><%= car.color %></a></h2>
+  <h2>Name: <a href="/cars/<%= car.name %>"><%= car.name %></a></h2>
+    <h2> long_name: <%= car.long_name %></h2> 
 <% end %>
-
-
-
-
-
-
 
 

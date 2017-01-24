@@ -1,0 +1,7 @@
+a = [ "a", "b", "c", "d" ]
+
+
+#collect is a synonym for a map
+a.collect { |x| x + "!" }        #=> ["a!", "b!", "c!", "d!"]
+a.map.with_index{ |x, i| x * i } #=> ["", "b", "cc", "ddd"]
+a                                #=> ["a", "b", "c", "d"]

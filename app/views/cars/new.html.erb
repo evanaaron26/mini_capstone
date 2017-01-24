@@ -1,0 +1,30 @@
+<h1>New Car</h1>
+
+<%= form_tag "/cars", method: :post do %> 
+    <div>
+        Year: <input type="text" name="year">
+    </div>
+    <div>
+        Mfg: <input type="text" name="manufacture">
+    </div>
+    <div>
+        Price: <input type="text" name="price">
+    </div>
+    <div>
+        Image: <input type="text" name="image">
+    </div>
+    <div>
+        Color: <input type="text" name="color">
+    </div>
+    <div>
+        Name: <input type="text" name="name">
+    </div>
+    <input type="submit" value="write new info for the car">
+<% end %> 
+
+
+
+
+
+
+

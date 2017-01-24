@@ -12,15 +12,17 @@ class CarsController < ApplicationController
 
             color: params["color"],
             year: params["year"],
-            year: params["manufacture"],
+            manufacture: params["manufacture"],
             price: params["price"],
             image: params["image"],
-            color: params["color"],
             name: params["name"]
             
             )
 
         @car.save
+
+        flash[:success] = "Recipe created successufully "
+        redirect_to "/cars/#{@car.id}"
     end
 
     def show 
@@ -35,20 +37,28 @@ class CarsController < ApplicationController
         @car = Car.find(params[:id])
 
         @car.color = params["color"]
-        @car.year = params["color"]
-        @car.manufacture = params["color"]
-        @car.price = params["color"]
-        @car.image = params["color"]
-        @car.color = params["color"]
-        @car.name = params["color"]
+        @car.year = params["year"]
+        @car.manufacture = params["manufacture"]
+        @car.price = params["price"]
+        @car.image = params["image"]
+        @car.name = params["name"]
 
         @car.save
+
+        flash[:success] = "Recipe updated"
+        redirect_to  "/cars/#{@car.id}"
     end
 
     def destroy
         @car = Cars.find(params[:id])
         @car.destroy
+
+
+        flash[:success] = "Destroyed"
+        redirect_to "/cars"
     end
+
+
 end
 
 

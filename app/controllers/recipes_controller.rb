@@ -1,4 +1,5 @@
 class RecipesController < ApplicationsController
+            
 
 
     def index
