@@ -1,6 +1,5 @@
 <h5>Updated On: <%= @car.friendly_updated_at %></h5>
 
-
 <h2>Manufacture: <%= @car.manufacture %></h2>
 
 <h2>Color: <%= @car.color %></h2>
@@ -8,6 +7,8 @@
 <h2>Year: <%= @car.year %></h2>
 
 <h2>Price: <%= @car.price %></h2>
+
+<h2>Price with Tax: <%= car.tax %></h2>
 
 <h2>Image: <%= @car.image %></h2>
 
@@ -22,4 +23,6 @@
 <input class="btn btn-danger"
 type="submit" value="remove car">
 <% end %>
+
+
 
