@@ -1,15 +1,24 @@
 <h1>Cars-App</h1>
 
+  <h2> <a href="/cars/new"> Add Car </a> </h2>
+
+  <h2> <a href="/cars?sort=year">Sort by Years</a> </h2>
+    <h2> <a href="/cars?sort=year&order=desc">Sort by Year Desc</a> </h2>
+
+  <h2> <a href="/cars?sort=price">Sort by Price</a> </h2>
+
 <% @cars.each do |car| %>
   <h2>Years: <a href="/cars/<%= car.id %>"><%= car.year %></a></h2>
-  <h2>Manufacture: <a href="/cars/<%= car.manufacture %>"><%= car.manufacture %></a></h2>
-  <h2>Price: <a href="/cars/<%= car.price %>"><%= car.price %></a></h2>
+  <h2>Manufacture: <a href="/cars/<%= car.id %>"><%= car.manufacture %></a></h2>
+  <h2>Price: <a href="/cars/<%= car.id %>"><%= car.price %></a></h2>
   <h2>Price with Tax: <%= car.tax %></h2>
-  <h2>Image: <a href="/cars/<%= car.image %>"><%= car.image %></a></h2>
-  <h2>Color: <a href="/cars/<%= car.color %>"><%= car.color %></a></h2>
-  <h2>Name: <a href="/cars/<%= car.name %>"><%= car.name %></a></h2>
+  <h2>Image: <a href="/cars/<%= car.id %>"><%= car.image %></a></h2>
+  <h2>Color: <a href="/cars/<%= car.id %>"><%= car.color %></a></h2>
+  <h2>Name: <a href="/cars/<%= car.id %>"><%= car.name %></a></h2>
   <h2> <%= car.sale_message %></h2>
-    <h2> long_name: <%= car.long_name %></h2> 
+  <h2> long_name: <%= car.long_name %></h2> 
+  <hr>
 <% end %>
+
 
 

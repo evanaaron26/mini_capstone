@@ -1,6 +1,20 @@
 class CarsController < ApplicationController
 	def index
 		@cars = Car.all 
+
+        sort_attribute = params[:sort]
+        order_attribute = params[:order]
+        p '*' * 20
+        p sort_attribute
+        p order_attribute
+        if order_attribute
+            p "order desc"
+            @cars = Car.order(order_attribute)
+        elsif sort_attribute
+            @cars = Car.order(sort_attribute)
+        else
+            
+        end
 	end 
 
     def new 

@@ -5,7 +5,7 @@ x = Car.new({
 	manufacture: "Mitsubishi", 
 	price: "10000", 
 	image: "http://carsmag.us/wp-content/uploads/2014/07/2014-Mitsubishi-Lancer-GT-Black.jpg", 
-	name: "Mitsubishi Lancer"
+	name: "Mitsubishi Lancer"})
 x.save
 
 x = Car.new({
@@ -14,6 +14,30 @@ x = Car.new({
 	manufacture: "kia", 
 	price: "30000", 
 	image: "http://www.optimaforums.com/forum/attachments/optima-general-discussion/11817d1350503387-2013-corsa-blue-sx-limited-here-new-color-sxl-bluesxl2.jpg", 
-	name: "2013 Corsa"
+	name: "2013 Corsa"})
 x.save
+
+x = Car.new({
+	color: "white", 
+	year: "2014", 
+	manufacture: "Ford", 
+	price: "40000", 
+	image: "http://images.dealer.com/autodata/us/large_stockphoto-color/2014/USC40FOS131A0/YZ.jpg", 
+	name: "2014 Escape"})
+x.save
+
+x = Car.new({
+	color: "silver", 
+	year: "2009", 
+	manufacture: "Aston Martin", 
+	price: "10000000", 
+	image: "http://images.gtcarlot.com/pictures/12426069.jpg", 
+	name: "V8 Vantage Coupe"})
+x.save
+
+
+
+
+
+
 
