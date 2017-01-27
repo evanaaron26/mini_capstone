@@ -4,17 +4,22 @@ class CarsController < ApplicationController
 
         sort_attribute = params[:sort]
         order_attribute = params[:order]
+        price = params[:price]
         p '*' * 20
         p sort_attribute
         p order_attribute
         if order_attribute
             p "order desc"
-            @cars = Car.order(order_attribute)
+            @cars = Car.order(year: :desc)
         elsif sort_attribute
             @cars = Car.order(sort_attribute)
         else
-            
+            Car.order(year: :desc)
         end
+        if price.where("price" < 200)
+           p price 
+        end
+
 	end 
 
     def new 
