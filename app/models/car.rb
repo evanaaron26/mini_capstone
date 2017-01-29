@@ -1,4 +1,7 @@
 class Car < ApplicationRecord
+    #association method
+    belongs_to :supplier 
+
     def friendly_updated_at
      updated_at.strftime('%b %e, %Y')
     end
@@ -20,5 +23,10 @@ class Car < ApplicationRecord
         price.to_i * 1.09
     end
 
-
 end
+
+    
+
+
+
+

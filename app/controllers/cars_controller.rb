@@ -15,10 +15,10 @@ class CarsController < ApplicationController
             @cars = Car.order(sort_attribute)
         else
             Car.order(year: :desc)
+        # if price.where("price" < 200)
+        #    p price 
         end
-        if price.where("price" < 200)
-           p price 
-        end
+
 
 	end 
 
