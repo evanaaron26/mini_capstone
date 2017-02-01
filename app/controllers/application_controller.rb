@@ -1,7 +1,4 @@
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
 
-  # app/controllers/application_controller.rb
 
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
@@ -17,5 +14,5 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
-end
+
 end

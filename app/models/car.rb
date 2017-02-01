@@ -1,6 +1,6 @@
 class Car < ApplicationRecord
     #association method
-    belongs_to :supplier 
+    belongs_to :user
 
     def friendly_updated_at
      updated_at.strftime('%b %e, %Y')

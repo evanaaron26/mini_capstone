@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
 	def index
-		@cars = Car.all 
+		@cars = Car.find_by(user_id: current_user.id) 
 
         sort_attribute = params[:sort]
         order_attribute = params[:order]
@@ -34,8 +34,8 @@ class CarsController < ApplicationController
             manufacture: params["manufacture"],
             price: params["price"],
             image: params["image"],
-            name: params["name"]
-            
+            name: params["name"],
+            user_id: current_user.id
             )
 
         @car.save
