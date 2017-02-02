@@ -1,6 +1,5 @@
 <h5>Updated On: <%= @car.friendly_updated_at %></h5>
 
-
 <h2>Manufacture: <%= @car.manufacture %></h2>
 
 <h2>Color: <%= @car.color %></h2>
@@ -22,6 +21,19 @@
 <input class="btn btn-danger"
 type="submit" value="remove car">
 <% end %>
+
+<%= form_tag "/orders", method: :post do %> 
+<%= label_tag :quantity %> 
+<%= text_field_tag :quantity %> 
+<%= label_tag :product_id %> 
+<%= text_field_tag :product_id %> 
+<input class="btn btn-danger"
+type="submit" value="buy now">
+
+
+
+<% end %>
+
 
 
 

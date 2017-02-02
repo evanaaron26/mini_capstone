@@ -1,25 +1,32 @@
 class CarsController < ApplicationController
-	def index
-		@cars = Car.find_by(user_id: current_user.id) 
 
-        sort_attribute = params[:sort]
-        order_attribute = params[:order]
-        price = params[:price]
-        p '*' * 20
-        p sort_attribute
-        p order_attribute
-        if order_attribute
-            p "order desc"
-            @cars = Car.order(year: :desc)
-        elsif sort_attribute
-            @cars = Car.order(sort_attribute)
-        else
-            Car.order(year: :desc)
-        # if price.where("price" < 200)
-        #    p price 
+    def index
+
+        if current_user
+
+    		@cars = Car.where(user_id: current_user.id)
+            p '*' * 20
+            p @cars
+            sort_attribute = params[:sort]
+            order_attribute = params[:order]
+            price = params[:price]
+            p '*' * 20
+            p sort_attribute
+            p order_attribute
+            if order_attribute
+                p "order desc"
+                @cars = Car.order(year: :desc)
+            elsif sort_attribute
+                @cars = Car.order(sort_attribute)
+            else
+                Car.order(year: :desc)
+            # if price.where("price" < 200)
+            #    p price 
+            end
+            render 'index.html.erb'
+        else 
+            redirect_to "/login"
         end
-
-
 	end 
 
     def new 
