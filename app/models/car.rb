@@ -1,6 +1,8 @@
 class Car < ApplicationRecord
     #association method
     belongs_to :user
+    has_many :category_cars
+    has_many :categories, through: :category_cars
 
     def friendly_updated_at
      updated_at.strftime('%b %e, %Y')
