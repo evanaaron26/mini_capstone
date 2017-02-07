@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
     end 
 
     def create 
-      @order = Order.new(user_id: session[:user_id], quantity: params[:quantity], product_id: params[:product_id], subtotal: Product.find(:product_id).price
+      @order = Order.new(user_id: session[:user_id], quantity: params[:quantity], product_id: params[:product_id], subtotal: Product.find(:product_id).price)
       @order.save
       redirect_to "/orders/#{@order.id}"
     end 

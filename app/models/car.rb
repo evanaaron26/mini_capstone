@@ -3,6 +3,7 @@ class Car < ApplicationRecord
     belongs_to :user
     has_many :category_cars
     has_many :categories, through: :category_cars
+    has_many :orders, through: :users
 
     def friendly_updated_at
      updated_at.strftime('%b %e, %Y')
@@ -24,6 +25,7 @@ class Car < ApplicationRecord
     def tax
         price.to_i * 1.09
     end
+
 
 end
 
