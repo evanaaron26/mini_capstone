@@ -1,4 +1,5 @@
 class CartedProductsController < ApplicationController
+    before_action :authenticate_user!
     
     def create
         carted_product = CartedProduct.new(
@@ -14,7 +15,6 @@ class CartedProductsController < ApplicationController
 
     def index
         @carted_products = CartedProduct.where("user_id = ? AND status = ?", current_user.id.to_s, "carted")
-
     end
 
 end

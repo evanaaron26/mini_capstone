@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+    before_action :authenticate_admin!, except: [:index, :show]
 
     def index
 
@@ -23,14 +24,18 @@ class CarsController < ApplicationController
             # if price.where("price" < 200)
             #    p price 
             end
+
             render 'index.html.erb'
         else 
             redirect_to "/login"
         end
-	end 
+    end 
 
     def new 
-        
+        @car = Car.new
+        unless current_user && current_user.admin
+            redirect_to '/' 
+        end        
     end
 
     def create 
@@ -45,10 +50,17 @@ class CarsController < ApplicationController
             user_id: current_user.id
             )
 
-        @car.save
+        unless current_user && current_user.admin
+            redirect_to '/'
+        end 
 
-        flash[:success] = "Recipe created successufully "
-        redirect_to "/cars/#{@car.id}"
+        if @car.save
+            flash[:success] = "Recipe created successufully "
+            redirect_to "/cars/#{@car.id}"
+        else 
+            render :new 
+        end 
+
     end
 
     def show 
@@ -57,6 +69,11 @@ class CarsController < ApplicationController
 
     def edit 
         @car = Car.find(params[:id])
+
+        unless current_user && current_user.admin
+            redirect_to '/'
+        end
+
     end
 
     def update 
@@ -69,10 +86,19 @@ class CarsController < ApplicationController
         @car.image = params["image"]
         @car.name = params["name"]
 
-        @car.save
+     
+        unless current_user && current_user.admin
+            redirect_to '/'
+        end
 
-        flash[:success] = "Recipe updated"
-        redirect_to  "/cars/#{@car.id}"
+        if @car.save
+            flash[:success] = "Car updated"
+            redirect_to  "/cars/#{@car.id}"
+
+        else 
+         render :edit
+        end 
+
     end
 
     def destroy
@@ -82,8 +108,12 @@ class CarsController < ApplicationController
 
         flash[:success] = "Destroyed"
         redirect_to "/cars"
-    end
 
+        unless current_user && current_user.admin
+            redirect_to '/'
+        end
+
+    end
 
 end
 
